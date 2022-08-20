@@ -1,5 +1,14 @@
 {
+  "/404": "pages/404.js",
   "/_app": "pages/_app.js",
+  "/categories": "pages/categories.js",
+  "/customers": "pages/customers.js",
+  "/": "pages/index.js",
+  "/orders": "pages/orders.js",
+  "/orders/order-detail": "pages/orders/order-detail.js",
+  "/products/create-product": "pages/products/create-product.js",
+  "/products": "pages/products.js",
+  "/settings": "pages/settings.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js"
 }

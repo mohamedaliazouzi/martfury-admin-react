@@ -3,6 +3,12 @@ module.exports =
 /******/ 	// The module cache
 /******/ 	var installedModules = require('../ssr-module-cache.js');
 /******/
+/******/ 	// object to store loaded chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	var installedChunks = {
+/******/ 		8: 0
+/******/ 	};
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
@@ -86,12 +92,26 @@ module.exports =
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/ 	// uncaught error handler for webpack runtime
+/******/ 	__webpack_require__.oe = function(err) {
+/******/ 		process.nextTick(function() {
+/******/ 			throw err; // catch this error by using import().catch()
+/******/ 		});
+/******/ 	};
+/******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "/T1H":
+/***/ (function(module, exports) {
+
+module.exports = require("next/dynamic");
+
+/***/ }),
 
 /***/ "/jkW":
 /***/ (function(module, exports, __webpack_require__) {
@@ -169,21 +189,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("YNMu");
-
-
-/***/ }),
-
-/***/ "1fKG":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-saga");
-
-/***/ }),
-
 /***/ "3WeD":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -237,6 +242,14 @@ function assign(target, ...searchParamsList) {
   });
   return target;
 }
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("cMU6");
+
 
 /***/ }),
 
@@ -475,17 +488,37 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "Exp3":
-/***/ (function(module, exports) {
-
-module.exports = require("antd");
-
-/***/ }),
-
 /***/ "F5FC":
 /***/ (function(module, exports) {
 
 module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ "FQA2":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+
+const WidgetEarningSidebar = () => {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+    className: "ps-block--earning-count",
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("small", {
+      children: "Earning"
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h3", {
+      children: "$12,560.55"
+    })]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (WidgetEarningSidebar);
 
 /***/ }),
 
@@ -551,13 +584,6 @@ const MenuSidebar = () => {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (MenuSidebar);
-
-/***/ }),
-
-/***/ "JMOJ":
-/***/ (function(module, exports) {
-
-module.exports = require("next-redux-wrapper");
 
 /***/ }),
 
@@ -821,24 +847,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "OdrH":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "Osoz":
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "RmXt":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-saga/effects");
 
 /***/ }),
 
@@ -850,31 +862,10 @@ module.exports = require("redux-saga/effects");
 
 /***/ }),
 
-/***/ "SAkk":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "T8f9":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-persist/lib/storage");
-
-/***/ }),
-
 /***/ "UhrY":
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router/utils/get-asset-path-from-route.js");
-
-/***/ }),
-
-/***/ "VNb8":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-persist");
 
 /***/ }),
 
@@ -910,462 +901,6 @@ exports.normalizePathTrailingSlash = normalizePathTrailingSlash;
 
 module.exports = __webpack_require__("cTJO")
 
-
-/***/ }),
-
-/***/ "YNMu":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__("F5FC");
-
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__("cDcd");
-
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__("xnum");
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
-
-// CONCATENATED MODULE: ./components/layouts/modules/Head.jsx
-
-
-
-
-
-const StyleSheets = () => /*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
-  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    httpEquiv: "X-UA-Compatible",
-    content: "IE=edge"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "viewport",
-    content: "width=device-width, initial-scale=1.0"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "format-detection",
-    content: "telephone=no"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "apple-mobile-web-app-capable",
-    content: "yes"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "author",
-    content: "nouthemes"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "keywords",
-    content: "Martfury, react, ecommerce, Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "description",
-    content: "Martfury - React eCommerce Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
-    children: "Martfury | React eCommerce Admin Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    href: "https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;subset=latin-ext",
-    rel: "stylesheet"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    href: "/fonts/Linearicons/Font/demo-files/demo.css"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    href: "/fonts/font-awesome/css/font-awesome.min.css"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    type: "text/css",
-    href: "/css/bootstrap.min.css"
-  })]
-});
-
-/* harmony default export */ var Head = (StyleSheets);
-// EXTERNAL MODULE: external "react-redux"
-var external_react_redux_ = __webpack_require__("h74D");
-
-// EXTERNAL MODULE: ./store/app/action.js
-var app_action = __webpack_require__("xWis");
-
-// CONCATENATED MODULE: ./components/shared/headers/HeaderMobile.jsx
-
-
-
-
-
-
-const HeaderMobile = ({
-  isDrawerMenu
-}) => {
-  const dispatch = Object(external_react_redux_["useDispatch"])();
-
-  const handleOpenDrawer = () => {
-    dispatch(Object(app_action["b" /* toggleDrawerMenu */])(true));
-  };
-
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
-    className: "header--mobile",
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      className: "header__left",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: "ps-drawer-toggle",
-        onClick: handleOpenDrawer,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon icon-menu"
-        })
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
-        src: "",
-        alt: ""
-      })]
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "header__center",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
-        className: "ps-logo",
-        href: "#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
-          src: "/img/logo.png",
-          alt: ""
-        })
-      })
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "header__right",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
-        className: "header__site-link",
-        href: "#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon-exit-right"
-        })
-      })
-    })]
-  });
-};
-
-/* harmony default export */ var headers_HeaderMobile = (Object(external_react_redux_["connect"])(state => state.app)(HeaderMobile));
-// EXTERNAL MODULE: ./components/shared/menus/MenuSidebar.jsx
-var MenuSidebar = __webpack_require__("IMan");
-
-// CONCATENATED MODULE: ./components/shared/drawers/DrawerMenu.jsx
-
-
-
-
-
-
-
-const DrawerMenu = ({
-  isDrawerMenu
-}) => {
-  const dispatch = Object(external_react_redux_["useDispatch"])();
-
-  const handleCloseDrawer = () => {
-    dispatch(Object(app_action["b" /* toggleDrawerMenu */])(false));
-  };
-
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("aside", {
-    className: `ps-drawer--mobile ${isDrawerMenu && 'active'}`,
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      className: "ps-drawer__header",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
-        children: " Menu"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: "ps-drawer__close",
-        onClick: handleCloseDrawer,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon icon-cross"
-        })
-      })]
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "ps-drawer__content",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(MenuSidebar["a" /* default */], {})
-    })]
-  });
-};
-
-/* harmony default export */ var drawers_DrawerMenu = (Object(external_react_redux_["connect"])(state => state.app)(DrawerMenu));
-// CONCATENATED MODULE: ./components/layouts/DefaultLayout.jsx
-
-
-
-
-
-
-
-const DefaultLayout = ({
-  children
-}) => {
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-    id: "martfury",
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(Head, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(headers_HeaderMobile, {}), children, /*#__PURE__*/Object(jsx_runtime_["jsx"])(drawers_DrawerMenu, {}), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      id: "loader-wrapper",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "loader-section section-left"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "loader-section section-right"
-      })]
-    })]
-  });
-};
-
-/* harmony default export */ var layouts_DefaultLayout = (DefaultLayout);
-// EXTERNAL MODULE: external "redux"
-var external_redux_ = __webpack_require__("rKB8");
-
-// EXTERNAL MODULE: external "redux-saga"
-var external_redux_saga_ = __webpack_require__("1fKG");
-var external_redux_saga_default = /*#__PURE__*/__webpack_require__.n(external_redux_saga_);
-
-// EXTERNAL MODULE: external "redux-persist"
-var external_redux_persist_ = __webpack_require__("VNb8");
-
-// EXTERNAL MODULE: external "redux-persist/lib/storage"
-var storage_ = __webpack_require__("T8f9");
-
-// CONCATENATED MODULE: ./store/auth/action.js
-const actionTypes = {
-  LOGIN_REQUEST: 'LOGIN_REQUEST',
-  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-  LOGOUT: 'LOGOUT',
-  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
-  CHECK_AUTHORIZATION: 'CHECK_AUTHORIZATION'
-};
-function login() {
-  return {
-    type: actionTypes.LOGIN_REQUEST
-  };
-}
-function loginSuccess() {
-  return {
-    type: actionTypes.LOGIN_SUCCESS
-  };
-}
-function logOut() {
-  return {
-    type: actionTypes.LOGOUT
-  };
-}
-function logOutSuccess() {
-  return {
-    type: actionTypes.LOGOUT_SUCCESS
-  };
-}
-// CONCATENATED MODULE: ./store/auth/reducer.js
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-const initState = {
-  isLoggedIn: false
-};
-
-function reducer(state = initState, action) {
-  switch (action.type) {
-    case actionTypes.LOGIN_SUCCESS:
-      return _objectSpread(_objectSpread({}, state), {
-        isLoggedIn: true
-      });
-
-    case actionTypes.LOGOUT_SUCCESS:
-      return _objectSpread(_objectSpread({}, state), {
-        isLoggedIn: false
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ var auth_reducer = (reducer);
-// CONCATENATED MODULE: ./store/app/reducer.js
-function reducer_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function reducer_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { reducer_ownKeys(Object(source), true).forEach(function (key) { reducer_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { reducer_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function reducer_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-const initialState = {
-  isDrawerMenu: false
-};
-
-function reducer_reducer(state = initialState, action) {
-  switch (action.type) {
-    case app_action["a" /* actionTypes */].TOGGLE_DRAWER_MENU_SUCCESS:
-      return reducer_objectSpread(reducer_objectSpread({}, state), {}, {
-        isDrawerMenu: action.payload
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ var app_reducer = (reducer_reducer);
-// CONCATENATED MODULE: ./store/rootReducer.js
-
-
-
-/* harmony default export */ var rootReducer = (Object(external_redux_["combineReducers"])({
-  auth: auth_reducer,
-  app: app_reducer
-}));
-// EXTERNAL MODULE: external "redux-saga/effects"
-var effects_ = __webpack_require__("RmXt");
-
-// CONCATENATED MODULE: ./store/app/saga.js
-
-
-
-function* toggleDrawerMenuSaga({
-  payload
-}) {
-  try {
-    yield Object(effects_["put"])(Object(app_action["c" /* toggleDrawerMenuSuccess */])(payload));
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-function* rootSaga() {
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(app_action["a" /* actionTypes */].TOGGLE_DRAWER_MENU, toggleDrawerMenuSaga)]);
-}
-// EXTERNAL MODULE: external "antd"
-var external_antd_ = __webpack_require__("Exp3");
-
-// CONCATENATED MODULE: ./store/auth/saga.js
-
-
-
-
-const modalSuccess = type => {
-  external_antd_["notification"][type]({
-    message: 'Wellcome back',
-    description: 'You are login successful!'
-  });
-};
-
-const modalWarning = type => {
-  external_antd_["notification"][type]({
-    message: 'Good bye!',
-    description: 'Your account has been logged out!'
-  });
-};
-
-function* loginSaga() {
-  try {
-    yield Object(effects_["put"])(loginSuccess());
-    modalSuccess('success');
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function* logOutSaga() {
-  try {
-    yield Object(effects_["put"])(logOutSuccess());
-    modalWarning('warning');
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function* saga_rootSaga() {
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(actionTypes.LOGIN_REQUEST, loginSaga)]);
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(actionTypes.LOGOUT, logOutSaga)]);
-}
-// CONCATENATED MODULE: ./store/rootSaga.js
-
-
-
-function* rootSaga_rootSaga() {
-  yield Object(effects_["all"])([rootSaga(), saga_rootSaga()]);
-}
-// EXTERNAL MODULE: external "next-redux-wrapper"
-var external_next_redux_wrapper_ = __webpack_require__("JMOJ");
-
-// CONCATENATED MODULE: ./store/store.js
-
-
-
-
-
-
-
-
-const bindMiddleware = middleware => {
-  if (false) {}
-
-  return Object(external_redux_["applyMiddleware"])(...middleware);
-};
-
-const makeStore = context => {
-  const sagaMiddleware = external_redux_saga_default()();
-  const store = Object(external_redux_["createStore"])(rootReducer, bindMiddleware([sagaMiddleware]));
-  store.sagaTask = sagaMiddleware.run(rootSaga_rootSaga);
-  return store;
-};
-const wrapper = Object(external_next_redux_wrapper_["createWrapper"])(makeStore, {
-  debug: false
-});
-/*
-const persistConfig = {
-    key: 'martfury',
-    storage,
-    whitelist: ['cart', 'compare', 'auth', 'wishlist'],
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-function configureStore(initialState) {
-    const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(
-        persistedReducer,
-        initialState,
-        bindMiddleware([sagaMiddleware])
-    );
-
-    store.sagaTask = sagaMiddleware.run(rootSaga);
-    return store;
-}
-
-export default configureStore;
-*/
-// EXTERNAL MODULE: ./styles/style.scss
-var style = __webpack_require__("OdrH");
-
-// EXTERNAL MODULE: ./node_modules/antd/dist/antd.min.css
-var antd_min = __webpack_require__("SAkk");
-
-// CONCATENATED MODULE: ./pages/_app.jsx
-
-
-function _app_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _app_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { _app_ownKeys(Object(source), true).forEach(function (key) { _app_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { _app_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _app_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-function App({
-  Component,
-  pageProps
-}) {
-  const getLayout = Component.getLayout || (page => /*#__PURE__*/Object(jsx_runtime_["jsx"])(layouts_DefaultLayout, {
-    children: page
-  }));
-
-  Object(external_react_["useEffect"])(() => {
-    setTimeout(function () {
-      document.getElementById('__next').classList.add('loaded');
-    }, 100);
-  }, []);
-  return getLayout( /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _app_objectSpread({}, pageProps)));
-}
-
-/* harmony default export */ var _app = __webpack_exports__["default"] = (wrapper.withRedux(App));
 
 /***/ }),
 
@@ -1494,10 +1029,915 @@ function getRouteRegex(normalizedRoute) {
 
 /***/ }),
 
+/***/ "a0bL":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+
+const WidgetUserWelcome = () => {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+    className: "ps-block--user-wellcome",
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+      className: "ps-block__left",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("img", {
+        src: "/img/user/admin.jpg",
+        alt: ""
+      })
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+      className: "ps-block__right",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("p", {
+        children: ["Hello,", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("a", {
+          href: "#",
+          children: "Soho Store"
+        })]
+      })
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+      className: "ps-block__action",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("a", {
+        href: "#",
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("i", {
+          className: "icon-exit"
+        })
+      })
+    })]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (WidgetUserWelcome);
+
+/***/ }),
+
 /***/ "cDcd":
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "cMU6":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__("F5FC");
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+
+// CONCATENATED MODULE: ./components/shared/tables/TableOrderSummary.jsx
+
+
+
+
+const TableOrderSummary = () => /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+  className: "table-responsive",
+  children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("table", {
+    className: "table ps-table",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("thead", {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "ID"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "Date"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "Product"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "Payment"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "Fullfillment"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {
+          children: "Total"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("th", {})]
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tbody", {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: "#A580"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " Aug, 15, 2020"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+            href: "order-detail.html",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+              children: "Unero Black Military"
+            })
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-badge success",
+            children: "Paid"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-fullfillment success",
+            children: "delivered"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$56.00"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "dropdown",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+                className: "icon-ellipsis"
+              })
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Edit"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Delete"
+              })]
+            })]
+          })
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: "#B260"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " Aug, 15, 2020"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+            href: "order-detail.html",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+              children: "Marsh Speaker"
+            })
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-badge gray",
+            children: "Unpaid"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-fullfillment success",
+            children: "delivered"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$56.00"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "dropdown",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+                className: "icon-ellipsis"
+              })
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Edit"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Delete"
+              })]
+            })]
+          })
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: "#A583"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " Aug, 15, 2020"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+            href: "order-detail.html",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+              children: "Lined Blend T-Shirt"
+            })
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-badge success",
+            children: "Paid"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-fullfillment warning",
+            children: "In Progress"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$516.00"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "dropdown",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+                className: "icon-ellipsis"
+              })
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Edit"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Delete"
+              })]
+            })]
+          })
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: "#A583"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " Aug, 15, 2020"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+            href: "order-detail.html",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+              children: "DJI MAcvic Quadcopter"
+            })
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-badge gray",
+            children: "Unpaid"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-fullfillment success",
+            children: "delivered"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$112.00"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "dropdown",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+                className: "icon-ellipsis"
+              })
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Edit"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Delete"
+              })]
+            })]
+          })
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("tr", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: "#A112"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " Aug, 15, 2020"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+            href: "order-detail.html",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+              children: "Black T-Shirt"
+            })
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-badge success",
+            children: "Paid"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            className: "ps-fullfillment danger",
+            children: "Cancel"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$30.00"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("td", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "dropdown",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+                className: "icon-ellipsis"
+              })
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Edit"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+                className: "dropdown-item",
+                href: "#",
+                children: "Delete"
+              })]
+            })]
+          })
+        })]
+      })]
+    })]
+  })
+});
+
+/* harmony default export */ var tables_TableOrderSummary = (TableOrderSummary);
+// CONCATENATED MODULE: ./components/shared/cards/CardRecentOrders.jsx
+
+
+
+
+
+const CardRecentOrders = () => /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+  className: "ps-card",
+  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+    className: "ps-card__header",
+    children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+      children: "Recent Orders"
+    })
+  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+    className: "ps-card__content",
+    children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(tables_TableOrderSummary, {})
+  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+    className: "ps-card__footer",
+    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("a", {
+      className: "ps-card__morelink",
+      href: "orders.htmls",
+      children: ["View Full Orders", /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+        className: "icon icon-chevron-right"
+      })]
+    })
+  })]
+});
+
+/* harmony default export */ var cards_CardRecentOrders = (CardRecentOrders);
+// EXTERNAL MODULE: external "next/dynamic"
+var dynamic_ = __webpack_require__("/T1H");
+var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic_);
+
+// CONCATENATED MODULE: ./components/shared/cards/CardSaleReport.jsx
+
+
+
+
+const Chart = dynamic_default()(() => Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, "qJ3r", 7)), {
+  ssr: false,
+  loadableGenerated: {
+    webpack: () => [/*require.resolve*/("qJ3r")],
+    modules: ['react-apexcharts']
+  }
+});
+
+const CardSaleReport = () => {
+  const state = {
+    series: [{
+      name: 'series1',
+      data: [100, 120, 99, 125, 127, 130, 148]
+    }],
+    options: {
+      chart: {
+        height: 350,
+        type: 'area',
+        toolbar: {
+          show: false
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      colors: ['#fcb800', '#f9f9f9', '#9C27B0'],
+      stroke: {
+        curve: 'smooth'
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: ['2018-09-19T00:00:00.000Z', '2018-09-19T01:30:00.000Z', '2018-09-19T02:30:00.000Z', '2018-09-19T03:30:00.000Z', '2018-09-19T04:30:00.000Z', '2018-09-19T05:30:00.000Z', '2018-09-19T06:30:00.000Z']
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm'
+        }
+      },
+      responsive: [{
+        breakpoint: 1680,
+        options: {
+          chart: {
+            width: '100%'
+          }
+        }
+      }, {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: '100%'
+          },
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }]
+    }
+  };
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "ps-card ps-card--sale-report",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "ps-card__header",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+        children: "Sales Reports"
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-card__content",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        id: "chart"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Chart, {
+        options: state.options,
+        series: state.series,
+        type: "area",
+        height: 320
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "ps-card__footer",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "row",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: "col-md-8",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+            children: "Items Earning Sales ($)"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: "col-md-4",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("a", {
+            href: "#",
+            children: ["Export Report", /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+              className: "icon icon-cloud-download ml-2"
+            })]
+          })
+        })]
+      })
+    })]
+  });
+};
+
+/* harmony default export */ var cards_CardSaleReport = (CardSaleReport);
+// CONCATENATED MODULE: ./components/shared/cards/CardEarning.jsx
+
+
+
+
+const CardEarning_Chart = dynamic_default()(() => Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, "qJ3r", 7)), {
+  ssr: false,
+  loadableGenerated: {
+    webpack: () => [/*require.resolve*/("qJ3r")],
+    modules: ['react-apexcharts']
+  }
+});
+
+const CardEarning = () => {
+  const state = {
+    series: [44, 55, 41],
+    options: {
+      chart: {
+        height: 500,
+        type: 'donut'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      legend: {
+        show: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: '100%'
+          },
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }]
+    }
+  };
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "ps-card ps-card--earning",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "ps-card__header",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+        children: "Earnings"
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-card__content",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-card__chart",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(CardEarning_Chart, {
+          options: state.options,
+          series: state.series,
+          type: "donut"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+          className: "ps-card__information",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+            className: "icon icon-wallet"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "$12,560"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("small", {
+            children: "Balance"
+          })]
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-card__status",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("p", {
+          className: "yellow",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " $20,199"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            children: "Income"
+          })]
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("p", {
+          className: "red",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " $1,021"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            children: "Taxes"
+          })]
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("p", {
+          className: "green",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: " $992.00"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+            children: "Fees"
+          })]
+        })]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ var cards_CardEarning = (CardEarning);
+// CONCATENATED MODULE: ./components/shared/cards/CardStatics.jsx
+
+
+
+
+const CardStatics = () => /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
+  className: "ps-card ps-card--statics",
+  children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "ps-card__header",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+      children: "Statics"
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-card__sortby",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+        className: "icon-calendar-empty"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "form-group--select",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("select", {
+          className: "form-control",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+            value: "1",
+            children: "Last 30 days"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+            value: "2",
+            children: "Last 90 days"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+            value: "3",
+            children: "Last 180 days"
+          })]
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+          className: "icon-chevron-down"
+        })]
+      })]
+    })]
+  }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "ps-card__content",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-block--stat yellow",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "ps-block__left",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+            className: "icon-cart"
+          })
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-block__content",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+          children: "Orders"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h4", {
+          children: ["254", /*#__PURE__*/Object(jsx_runtime_["jsxs"])("small", {
+            className: "asc",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+              className: "icon-arrow-up"
+            }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+              children: "12,5%"
+            })]
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-block--stat pink",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "ps-block__left",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+            className: "icon-cart"
+          })
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-block__content",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+          children: "Revenue"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h4", {
+          children: ["$6,260", /*#__PURE__*/Object(jsx_runtime_["jsxs"])("small", {
+            className: "asc",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+              className: "icon-arrow-up"
+            }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+              children: "7.1%"
+            })]
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "ps-block--stat green",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "ps-block__left",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+            className: "icon-cart"
+          })
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-block__content",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+          children: "Earning"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h4", {
+          children: ["$2,567", /*#__PURE__*/Object(jsx_runtime_["jsxs"])("small", {
+            className: "desc",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+              className: "icon-arrow-down"
+            }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+              children: "0.5%"
+            })]
+          })]
+        })]
+      })]
+    })]
+  })]
+});
+
+/* harmony default export */ var cards_CardStatics = (CardStatics);
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__("xnum");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
+
+// EXTERNAL MODULE: ./components/shared/footers/FooterCopyright.jsx
+var FooterCopyright = __webpack_require__("sMam");
+
+// EXTERNAL MODULE: ./components/shared/menus/MenuSidebar.jsx
+var MenuSidebar = __webpack_require__("IMan");
+
+// EXTERNAL MODULE: ./components/shared/widgets/WidgetEarningSidebar.jsx
+var WidgetEarningSidebar = __webpack_require__("FQA2");
+
+// EXTERNAL MODULE: ./components/shared/widgets/WidgetUserWelcome.jsx
+var WidgetUserWelcome = __webpack_require__("a0bL");
+
+// EXTERNAL MODULE: ./components/shared/headers/HeaderDashboard.jsx + 1 modules
+var HeaderDashboard = __webpack_require__("vWTs");
+
+// CONCATENATED MODULE: ./components/layouts/ContainerDashboard.jsx
+
+
+
+
+
+
+
+
+
+
+const ContainerDashboard = ({
+  children,
+  title
+}) => {
+  let titleView;
+
+  if (title !== undefined) {
+    titleView = "Martfury" + ' | ' + title;
+  } else {
+    titleView = "Martfury" + ' | ' + "Admin Template";
+  }
+
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "martfury-admin",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(head_default.a, {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
+        children: titleView
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("main", {
+      className: "ps-main",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "ps-main__sidebar",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+          className: "ps-sidebar",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "ps-sidebar__top",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(WidgetUserWelcome["a" /* default */], {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(WidgetEarningSidebar["a" /* default */], {})]
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+            className: "ps-sidebar__content",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+              className: "ps-sidebar__center",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(MenuSidebar["a" /* default */], {})
+            })
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+            className: "ps-sidebar__footer",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(FooterCopyright["a" /* default */], {})
+          })]
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-main__wrapper",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(HeaderDashboard["a" /* default */], {}), children]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ var layouts_ContainerDashboard = (ContainerDashboard);
+// EXTERNAL MODULE: external "react-redux"
+var external_react_redux_ = __webpack_require__("h74D");
+
+// EXTERNAL MODULE: ./store/app/action.js
+var action = __webpack_require__("xWis");
+
+// CONCATENATED MODULE: ./components/shared/cards/CardTopCountries.jsx
+
+
+
+
+const CardTopCountries = () => /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
+  className: "ps-card ps-card--top-country",
+  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+    className: "ps-card__header",
+    children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+      children: "Top Countries"
+    })
+  }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "ps-card__content",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "row",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "col-6",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("figure", {
+          className: "organge",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("figcaption", {
+            children: "United States"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "80%"
+          })]
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "col-6",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("figure", {
+          className: "red",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("figcaption", {
+            children: "United Kingdom"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "65%"
+          })]
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "col-6",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("figure", {
+          className: "green",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("figcaption", {
+            children: "Germany"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "65%"
+          })]
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "col-6",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("figure", {
+          className: "cyan",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("figcaption", {
+            children: "Russia"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+            children: "35%"
+          })]
+        })
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+      src: "/img/map-and-bundle.png",
+      alt: ""
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+      children: "We only started collecting region data from January 2015"
+    })]
+  })]
+});
+
+/* harmony default export */ var cards_CardTopCountries = (CardTopCountries);
+// CONCATENATED MODULE: ./pages/index.jsx
+
+
+
+
+
+
+
+
+
+
+
+
+const Index = () => {
+  const dispatch = Object(external_react_redux_["useDispatch"])();
+  Object(external_react_["useEffect"])(() => {
+    dispatch(Object(action["b" /* toggleDrawerMenu */])(false));
+  }, []);
+  return /*#__PURE__*/Object(jsx_runtime_["jsx"])(layouts_ContainerDashboard, {
+    title: "Dashboard",
+    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
+      className: "ps-dashboard",
+      id: "homepage",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-section__left",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+          className: "row",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+            className: "col-xl-8 col-12",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(cards_CardSaleReport, {})
+          }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+            className: "col-xl-4 col-12",
+            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(cards_CardEarning, {})
+          })]
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(cards_CardRecentOrders, {})]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "ps-section__right",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(cards_CardStatics, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(cards_CardTopCountries, {})]
+      })]
+    })
+  });
+};
+
+/* harmony default export */ var pages = __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -3084,10 +3524,38 @@ function makePublicRouterInstance(router) {
 
 /***/ }),
 
-/***/ "rKB8":
+/***/ "qJ3r":
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-apexcharts");
+
+/***/ }),
+
+/***/ "sMam":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+
+const FooterCopyright = () => {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+    className: "ps-copyright",
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("img", {
+      src: "/img/logo.png",
+      alt: ""
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("p", {
+      children: ["\xA92020 Marfury marketplace. ", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("br", {}), " All rights reversed."]
+    })]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (FooterCopyright);
 
 /***/ }),
 
@@ -3183,6 +3651,81 @@ function createObserver(options) {
   });
   return instance;
 }
+
+/***/ }),
+
+/***/ "vWTs":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__("F5FC");
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+
+// CONCATENATED MODULE: ./components/shared/forms/FormHeaderSearch.jsx
+
+
+
+
+const FormHeaderSearch = () => {
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("form", {
+    className: "ps-form--search-bar",
+    action: "index.html",
+    method: "get",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+      className: "form-control",
+      type: "text",
+      placeholder: "Search something"
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+        className: "icon-magnifier"
+      })
+    })]
+  });
+};
+
+/* harmony default export */ var forms_FormHeaderSearch = (FormHeaderSearch);
+// CONCATENATED MODULE: ./components/shared/headers/HeaderDashboard.jsx
+
+
+
+
+
+const HeaderDashboard = ({
+  title = 'Dashboard',
+  description = 'Everything here'
+}) => {
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
+    className: "header--dashboard",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "header__left",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h3", {
+        children: title
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+        children: description
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "header__center",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(forms_FormHeaderSearch, {})
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "header__right",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("a", {
+        className: "header__site-link",
+        href: "#",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: "View your store"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
+          className: "icon-exit-right"
+        })]
+      })
+    })]
+  });
+};
+
+/* harmony default export */ var headers_HeaderDashboard = __webpack_exports__["a"] = (HeaderDashboard);
 
 /***/ }),
 

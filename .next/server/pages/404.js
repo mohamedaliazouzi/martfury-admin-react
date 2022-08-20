@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,6 +107,14 @@ const TEST_ROUTE = /\/\[[^/]+?\](?=\/|$)/;
 function isDynamicRoute(route) {
   return TEST_ROUTE.test(route);
 }
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("8qjm");
+
 
 /***/ }),
 
@@ -169,21 +177,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("YNMu");
-
-
-/***/ }),
-
-/***/ "1fKG":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-saga");
-
-/***/ }),
-
 /***/ "3WeD":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -237,13 +230,6 @@ function assign(target, ...searchParamsList) {
   });
   return target;
 }
-
-/***/ }),
-
-/***/ "4Q3z":
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 
@@ -439,6 +425,53 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
+/***/ "8qjm":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("YFqc");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+
+function Error({
+  statusCode
+}) {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+    className: "ps-page--404",
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("figure", {
+      className: "ps-block--notfound",
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h3", {
+        children: "Ohh! Page not found"
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("p", {
+        children: ["It seems we can't find what you're looking for. ", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("br", {})]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("p", {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("strong", {
+          className: "mr-2",
+          children: "Return to"
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+          href: "/",
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("a", {
+            className: "ps-btn ps-btn--black ps-btn--rounded ps-btn--sm",
+            children: "Dashboard"
+          })
+        })]
+      })]
+    })
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Error);
+
+/***/ }),
+
 /***/ "AroE":
 /***/ (function(module, exports) {
 
@@ -475,89 +508,10 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "Exp3":
-/***/ (function(module, exports) {
-
-module.exports = require("antd");
-
-/***/ }),
-
 /***/ "F5FC":
 /***/ (function(module, exports) {
 
 module.exports = require("react/jsx-runtime");
-
-/***/ }),
-
-/***/ "IMan":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("4Q3z");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-
-
-const MenuSidebar = () => {
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
-  const menuItems = [{
-    text: 'Dashboard',
-    url: '/',
-    icon: 'icon-home'
-  }, {
-    text: 'Products',
-    url: '/products',
-    icon: 'icon-database'
-  }, {
-    text: 'Orders',
-    url: '/orders',
-    icon: 'icon-bag2'
-  }, {
-    text: 'Customers',
-    url: '/customers',
-    icon: 'icon-users2'
-  }, {
-    text: 'Categories',
-    url: '/categories',
-    icon: 'icon-users2'
-  }, {
-    text: 'Settings',
-    url: '/settings',
-    icon: 'icon-cog'
-  }];
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("ul", {
-    className: "menu",
-    children: menuItems.map((item, index) => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("li", {
-      className: router.pathname === item.url ? 'active' : '',
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: item.url,
-        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("a", {
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("i", {
-            className: item.icon
-          }), item.text]
-        })
-      })
-    }, index))
-  });
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (MenuSidebar);
-
-/***/ }),
-
-/***/ "JMOJ":
-/***/ (function(module, exports) {
-
-module.exports = require("next-redux-wrapper");
 
 /***/ }),
 
@@ -821,24 +775,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "OdrH":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "Osoz":
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "RmXt":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-saga/effects");
 
 /***/ }),
 
@@ -850,31 +790,10 @@ module.exports = require("redux-saga/effects");
 
 /***/ }),
 
-/***/ "SAkk":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "T8f9":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-persist/lib/storage");
-
-/***/ }),
-
 /***/ "UhrY":
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router/utils/get-asset-path-from-route.js");
-
-/***/ }),
-
-/***/ "VNb8":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-persist");
 
 /***/ }),
 
@@ -910,462 +829,6 @@ exports.normalizePathTrailingSlash = normalizePathTrailingSlash;
 
 module.exports = __webpack_require__("cTJO")
 
-
-/***/ }),
-
-/***/ "YNMu":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__("F5FC");
-
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__("cDcd");
-
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__("xnum");
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
-
-// CONCATENATED MODULE: ./components/layouts/modules/Head.jsx
-
-
-
-
-
-const StyleSheets = () => /*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
-  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    httpEquiv: "X-UA-Compatible",
-    content: "IE=edge"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "viewport",
-    content: "width=device-width, initial-scale=1.0"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "format-detection",
-    content: "telephone=no"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "apple-mobile-web-app-capable",
-    content: "yes"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "author",
-    content: "nouthemes"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "keywords",
-    content: "Martfury, react, ecommerce, Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-    name: "description",
-    content: "Martfury - React eCommerce Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
-    children: "Martfury | React eCommerce Admin Template"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    href: "https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;subset=latin-ext",
-    rel: "stylesheet"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    href: "/fonts/Linearicons/Font/demo-files/demo.css"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    href: "/fonts/font-awesome/css/font-awesome.min.css"
-  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-    rel: "stylesheet",
-    type: "text/css",
-    href: "/css/bootstrap.min.css"
-  })]
-});
-
-/* harmony default export */ var Head = (StyleSheets);
-// EXTERNAL MODULE: external "react-redux"
-var external_react_redux_ = __webpack_require__("h74D");
-
-// EXTERNAL MODULE: ./store/app/action.js
-var app_action = __webpack_require__("xWis");
-
-// CONCATENATED MODULE: ./components/shared/headers/HeaderMobile.jsx
-
-
-
-
-
-
-const HeaderMobile = ({
-  isDrawerMenu
-}) => {
-  const dispatch = Object(external_react_redux_["useDispatch"])();
-
-  const handleOpenDrawer = () => {
-    dispatch(Object(app_action["b" /* toggleDrawerMenu */])(true));
-  };
-
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
-    className: "header--mobile",
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      className: "header__left",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: "ps-drawer-toggle",
-        onClick: handleOpenDrawer,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon icon-menu"
-        })
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
-        src: "",
-        alt: ""
-      })]
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "header__center",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
-        className: "ps-logo",
-        href: "#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
-          src: "/img/logo.png",
-          alt: ""
-        })
-      })
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "header__right",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
-        className: "header__site-link",
-        href: "#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon-exit-right"
-        })
-      })
-    })]
-  });
-};
-
-/* harmony default export */ var headers_HeaderMobile = (Object(external_react_redux_["connect"])(state => state.app)(HeaderMobile));
-// EXTERNAL MODULE: ./components/shared/menus/MenuSidebar.jsx
-var MenuSidebar = __webpack_require__("IMan");
-
-// CONCATENATED MODULE: ./components/shared/drawers/DrawerMenu.jsx
-
-
-
-
-
-
-
-const DrawerMenu = ({
-  isDrawerMenu
-}) => {
-  const dispatch = Object(external_react_redux_["useDispatch"])();
-
-  const handleCloseDrawer = () => {
-    dispatch(Object(app_action["b" /* toggleDrawerMenu */])(false));
-  };
-
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("aside", {
-    className: `ps-drawer--mobile ${isDrawerMenu && 'active'}`,
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      className: "ps-drawer__header",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
-        children: " Menu"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: "ps-drawer__close",
-        onClick: handleCloseDrawer,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
-          className: "icon icon-cross"
-        })
-      })]
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: "ps-drawer__content",
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(MenuSidebar["a" /* default */], {})
-    })]
-  });
-};
-
-/* harmony default export */ var drawers_DrawerMenu = (Object(external_react_redux_["connect"])(state => state.app)(DrawerMenu));
-// CONCATENATED MODULE: ./components/layouts/DefaultLayout.jsx
-
-
-
-
-
-
-
-const DefaultLayout = ({
-  children
-}) => {
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-    id: "martfury",
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(Head, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(headers_HeaderMobile, {}), children, /*#__PURE__*/Object(jsx_runtime_["jsx"])(drawers_DrawerMenu, {}), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      id: "loader-wrapper",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "loader-section section-left"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "loader-section section-right"
-      })]
-    })]
-  });
-};
-
-/* harmony default export */ var layouts_DefaultLayout = (DefaultLayout);
-// EXTERNAL MODULE: external "redux"
-var external_redux_ = __webpack_require__("rKB8");
-
-// EXTERNAL MODULE: external "redux-saga"
-var external_redux_saga_ = __webpack_require__("1fKG");
-var external_redux_saga_default = /*#__PURE__*/__webpack_require__.n(external_redux_saga_);
-
-// EXTERNAL MODULE: external "redux-persist"
-var external_redux_persist_ = __webpack_require__("VNb8");
-
-// EXTERNAL MODULE: external "redux-persist/lib/storage"
-var storage_ = __webpack_require__("T8f9");
-
-// CONCATENATED MODULE: ./store/auth/action.js
-const actionTypes = {
-  LOGIN_REQUEST: 'LOGIN_REQUEST',
-  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-  LOGOUT: 'LOGOUT',
-  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
-  CHECK_AUTHORIZATION: 'CHECK_AUTHORIZATION'
-};
-function login() {
-  return {
-    type: actionTypes.LOGIN_REQUEST
-  };
-}
-function loginSuccess() {
-  return {
-    type: actionTypes.LOGIN_SUCCESS
-  };
-}
-function logOut() {
-  return {
-    type: actionTypes.LOGOUT
-  };
-}
-function logOutSuccess() {
-  return {
-    type: actionTypes.LOGOUT_SUCCESS
-  };
-}
-// CONCATENATED MODULE: ./store/auth/reducer.js
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-const initState = {
-  isLoggedIn: false
-};
-
-function reducer(state = initState, action) {
-  switch (action.type) {
-    case actionTypes.LOGIN_SUCCESS:
-      return _objectSpread(_objectSpread({}, state), {
-        isLoggedIn: true
-      });
-
-    case actionTypes.LOGOUT_SUCCESS:
-      return _objectSpread(_objectSpread({}, state), {
-        isLoggedIn: false
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ var auth_reducer = (reducer);
-// CONCATENATED MODULE: ./store/app/reducer.js
-function reducer_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function reducer_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { reducer_ownKeys(Object(source), true).forEach(function (key) { reducer_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { reducer_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function reducer_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-const initialState = {
-  isDrawerMenu: false
-};
-
-function reducer_reducer(state = initialState, action) {
-  switch (action.type) {
-    case app_action["a" /* actionTypes */].TOGGLE_DRAWER_MENU_SUCCESS:
-      return reducer_objectSpread(reducer_objectSpread({}, state), {}, {
-        isDrawerMenu: action.payload
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ var app_reducer = (reducer_reducer);
-// CONCATENATED MODULE: ./store/rootReducer.js
-
-
-
-/* harmony default export */ var rootReducer = (Object(external_redux_["combineReducers"])({
-  auth: auth_reducer,
-  app: app_reducer
-}));
-// EXTERNAL MODULE: external "redux-saga/effects"
-var effects_ = __webpack_require__("RmXt");
-
-// CONCATENATED MODULE: ./store/app/saga.js
-
-
-
-function* toggleDrawerMenuSaga({
-  payload
-}) {
-  try {
-    yield Object(effects_["put"])(Object(app_action["c" /* toggleDrawerMenuSuccess */])(payload));
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-function* rootSaga() {
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(app_action["a" /* actionTypes */].TOGGLE_DRAWER_MENU, toggleDrawerMenuSaga)]);
-}
-// EXTERNAL MODULE: external "antd"
-var external_antd_ = __webpack_require__("Exp3");
-
-// CONCATENATED MODULE: ./store/auth/saga.js
-
-
-
-
-const modalSuccess = type => {
-  external_antd_["notification"][type]({
-    message: 'Wellcome back',
-    description: 'You are login successful!'
-  });
-};
-
-const modalWarning = type => {
-  external_antd_["notification"][type]({
-    message: 'Good bye!',
-    description: 'Your account has been logged out!'
-  });
-};
-
-function* loginSaga() {
-  try {
-    yield Object(effects_["put"])(loginSuccess());
-    modalSuccess('success');
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function* logOutSaga() {
-  try {
-    yield Object(effects_["put"])(logOutSuccess());
-    modalWarning('warning');
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function* saga_rootSaga() {
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(actionTypes.LOGIN_REQUEST, loginSaga)]);
-  yield Object(effects_["all"])([Object(effects_["takeEvery"])(actionTypes.LOGOUT, logOutSaga)]);
-}
-// CONCATENATED MODULE: ./store/rootSaga.js
-
-
-
-function* rootSaga_rootSaga() {
-  yield Object(effects_["all"])([rootSaga(), saga_rootSaga()]);
-}
-// EXTERNAL MODULE: external "next-redux-wrapper"
-var external_next_redux_wrapper_ = __webpack_require__("JMOJ");
-
-// CONCATENATED MODULE: ./store/store.js
-
-
-
-
-
-
-
-
-const bindMiddleware = middleware => {
-  if (false) {}
-
-  return Object(external_redux_["applyMiddleware"])(...middleware);
-};
-
-const makeStore = context => {
-  const sagaMiddleware = external_redux_saga_default()();
-  const store = Object(external_redux_["createStore"])(rootReducer, bindMiddleware([sagaMiddleware]));
-  store.sagaTask = sagaMiddleware.run(rootSaga_rootSaga);
-  return store;
-};
-const wrapper = Object(external_next_redux_wrapper_["createWrapper"])(makeStore, {
-  debug: false
-});
-/*
-const persistConfig = {
-    key: 'martfury',
-    storage,
-    whitelist: ['cart', 'compare', 'auth', 'wishlist'],
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-function configureStore(initialState) {
-    const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(
-        persistedReducer,
-        initialState,
-        bindMiddleware([sagaMiddleware])
-    );
-
-    store.sagaTask = sagaMiddleware.run(rootSaga);
-    return store;
-}
-
-export default configureStore;
-*/
-// EXTERNAL MODULE: ./styles/style.scss
-var style = __webpack_require__("OdrH");
-
-// EXTERNAL MODULE: ./node_modules/antd/dist/antd.min.css
-var antd_min = __webpack_require__("SAkk");
-
-// CONCATENATED MODULE: ./pages/_app.jsx
-
-
-function _app_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _app_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { _app_ownKeys(Object(source), true).forEach(function (key) { _app_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { _app_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _app_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-function App({
-  Component,
-  pageProps
-}) {
-  const getLayout = Component.getLayout || (page => /*#__PURE__*/Object(jsx_runtime_["jsx"])(layouts_DefaultLayout, {
-    children: page
-  }));
-
-  Object(external_react_["useEffect"])(() => {
-    setTimeout(function () {
-      document.getElementById('__next').classList.add('loaded');
-    }, 100);
-  }, []);
-  return getLayout( /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _app_objectSpread({}, pageProps)));
-}
-
-/* harmony default export */ var _app = __webpack_exports__["default"] = (wrapper.withRedux(App));
 
 /***/ }),
 
@@ -2878,13 +2341,6 @@ function getRouteMatcher(routeRegex) {
 
 /***/ }),
 
-/***/ "h74D":
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
 /***/ "hS4m":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3084,13 +2540,6 @@ function makePublicRouterInstance(router) {
 
 /***/ }),
 
-/***/ "rKB8":
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-
 /***/ "vNVm":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3192,39 +2641,6 @@ function createObserver(options) {
 "use strict";
 exports.__esModule=true;exports.normalizePathSep=normalizePathSep;exports.denormalizePagePath=denormalizePagePath;function normalizePathSep(path){return path.replace(/\\/g,'/');}function denormalizePagePath(page){page=normalizePathSep(page);if(page.startsWith('/index/')){page=page.slice(6);}else if(page==='/index'){page='/';}return page;}
 //# sourceMappingURL=denormalize-page-path.js.map
-
-/***/ }),
-
-/***/ "xWis":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return actionTypes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return toggleDrawerMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return toggleDrawerMenuSuccess; });
-const actionTypes = {
-  TOGGLE_DRAWER_MENU: 'TOGGLE_DRAWER_MENU',
-  TOGGLE_DRAWER_MENU_SUCCESS: 'TOGGLE_DRAWER_MENU_SUCCESS'
-};
-function toggleDrawerMenu(payload) {
-  return {
-    type: actionTypes.TOGGLE_DRAWER_MENU,
-    payload
-  };
-}
-function toggleDrawerMenuSuccess(payload) {
-  return {
-    type: actionTypes.TOGGLE_DRAWER_MENU_SUCCESS,
-    payload
-  };
-}
-
-/***/ }),
-
-/***/ "xnum":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
 
 /***/ })
 
